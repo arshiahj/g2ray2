@@ -6,9 +6,10 @@ tmux send-keys -t g2ray "sudo /usr/local/bin/xray run -c /etc/xray/g2ray.json &>
 sleep 2
 show-link.sh
 
-# Keepalive — ping every 600 seconds to prevent idle shutdown
+# Keepalive — ping every 180 seconds to prevent idle shutdown
 tmux new-window -t g2ray -n keepalive
-tmux send-keys -t g2ray:keepalive "while true; do curl -s --max-time 5 https://github.com/ -o /dev/null; sleep 600; done" Enter
-echo "[g2ray] Keepalive فعال است — هر 600 ثانیه یک بار ping"
-echo "[g2ray] سرور داخل tmux اجرا شد"
-echo "[g2ray] برای دیدن log: tmux attach -t g2ray"
+tmux send-keys -t g2ray:keepalive "while true; do curl -s --max-time 5 https://github.com/ -o /dev/null; sleep 180; done" Enter
+echo "[g2ray] Keepalive => every 180 seconds (3 minutes) ping..."
+
+echo "[g2ray] server is running in tmux"
+echo "[g2ray] for watching logs: tmux attach -t g2ray"
