@@ -1,5 +1,5 @@
 {
-  "name": "Naanaaz kocholoo",
+  "name": "Sobet bekheyr",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "."
@@ -15,7 +15,7 @@
   "postAttachCommand": "gh codespace ports visibility 443:public -c $CODESPACE_NAME && bash /usr/local/bin/start.sh",
   "portsAttributes": {
     "443": {
-      "label": "Naanaaz kocholoo",
+      "label": "Sobet bekheyr",
       "protocol": "http",
       "onAutoForward": "silent"
     }
